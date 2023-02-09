@@ -16,3 +16,12 @@ git add .
 git commit -m "Criação sa estrutura de pasta, da solução e do projeto WebApi do backend"
 git status
 git push
+
+/* Clicar no botão azul da janelinha que será exibida*/
+/* se necessariuo no mavegador clicar no botão para autorizar o acesso ao repositorio*/
+
+/* para testar a API de dentro da pasta backend*/
+dotnet watch run --project AccountOwnerServer\AccountOwnerServer.csproj
+
+/* para testar a API de dentro da pasta AccountOwnerServer*/
+dotnet watch run
