@@ -25,3 +25,5 @@ dotnet watch run --project AccountOwnerServer\AccountOwnerServer.csproj
 
 /* para testar a API de dentro da pasta AccountOwnerServer*/
 dotnet watch run
+
+/* entrar cd backend e dotnet build - verificar erros */
