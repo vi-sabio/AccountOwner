@@ -1,12 +1,10 @@
 using Contracts;
 using LoggerService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace AccountOwnerServer.Extensions
-{
+namespace AccountOwnerServer.Extensions;
+
     public static class ServiceExtensions
     {
         public static void ConfigureCors(this IServiceCollection services)
@@ -33,5 +31,10 @@ namespace AccountOwnerServer.Extensions
            services.AddSingleton<ILoggerManager, LoggerManager>();
         }
 
+        public static void ConfigureMySqlContexte(this IServiceCollection services, IConfiguration config)
+        {
+            var conn = config["mysqlconnection:connectionString"];
+            services.AddDbContext<RepositoryContext>(o => o.UseMySql(conn, ServerVersion.AutoDetect(conn)));
+        }
+
     }
-}
